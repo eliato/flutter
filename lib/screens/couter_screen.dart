@@ -45,13 +45,20 @@ class _CounterScreenState
           ],
         ),
       ),
-      //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          counter++;
-          setState(() {});
-        },
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(child: const Icon(Icons.add), onPressed: () => setState(() => counter++)),
+          FloatingActionButton(
+            child: const Icon(Icons.whatsapp),
+            onPressed: () => setState(() => counter = 0),
+          ),
+          FloatingActionButton(
+            child: const Icon(Icons.exposure_minus_1_outlined),
+            onPressed: () => setState(() => counter--),
+          ),
+        ],
       ),
     );
   }
